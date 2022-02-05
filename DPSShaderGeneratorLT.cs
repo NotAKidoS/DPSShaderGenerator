@@ -1002,7 +1002,7 @@ namespace DPSGen
 
             log = "";
 
-            // AssetDatabase.StartAssetEditing();
+            AssetDatabase.StartAssetEditing();
 
             string[] guids1 = AssetDatabase.FindAssets("t:Shader");
             foreach (string guid in guids1)
