@@ -45,7 +45,7 @@ namespace DPSGen
             EditorGUILayout.Space();
 
             EditorGUILayout.LabelField("Generate DPS lilToon");
-            EditorGUILayout.HelpBox("You need to import DPS and lilToon 1.2.8 before running this script.", MessageType.Info);
+            EditorGUILayout.HelpBox("You need to import DPS and lilToon before running this script.", MessageType.Info);
             EditorGUILayout.Space();
 
             if (GUILayout.Button("Generate"))
@@ -885,7 +885,7 @@ namespace DPSGen
                     }
 
                     if (lines[i].IndexOf("isCustomShader  = material.shader.name.Contains") >= 0)
-                        lines[i] = lines[i].Replace("Optional", "Orifice");
+                        lines[i] = "            isCustomShader  = true;";
 
                     if (lines[i].IndexOf("(lilPresetCategory)") >= 0)
                         lines[i] = lines[i].Replace("(lilPresetCategory)", "(lilToonInspector.lilPresetCategory)");
@@ -964,8 +964,8 @@ namespace DPSGen
                         }
                     }
 
-                    if (lines[i].IndexOf("isCustomShader  = material") >= 0)
-                        lines[i] = lines[i].Replace("Optional", "Penetrator");
+                    if (lines[i].IndexOf("isCustomShader  = material.shader.name.Contains") >= 0)
+                        lines[i] = "            isCustomShader  = true;";
 
                     if (lines[i].IndexOf("(lilPresetCategory)") >= 0)
                         lines[i] = lines[i].Replace("(lilPresetCategory)", "(lilToonInspector.lilPresetCategory)");
